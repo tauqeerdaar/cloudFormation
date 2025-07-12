@@ -234,9 +234,9 @@ Resources:
     Type: "AWS::AutoScaling::AutoScalingGroup"
     Properties:
       AutoScalingGroupName: "TerryASG"
-      MinSize: "2"
+      MinSize: "3"
       MaxSize: "5"
-      DesiredCapacity: "2"
+      DesiredCapacity: "3"
       VPCZoneIdentifier:
         - !Ref PublicSubnet # Launch instances in the public subnet
       LaunchTemplate:
