@@ -25,10 +25,7 @@ jobs:
                 aws cloudformation deploy \
                 --template-file terryResources.yaml \
                 --stack-name terryResourceDeploy \
-                --capabilities CAPABILITY_NAMED_IAM
-                --parameters \
-                    ParameterKey=KeyPairName,ParameterValue=${{ secrets.KEY_PAIR_NAME }} \
-                    ParameterKey=DBPassword,ParameterValue=${{ secrets.DB_PASSWORD }}
+                --capabilities CAPABILITY_NAMED_IAM \
+                --parameter-overrides KeyPairName=${{ secrets.KEY_PAIR_NAME }} DBPassword=${{ secrets.DB_PASSWORD }}
 
         
-                    
